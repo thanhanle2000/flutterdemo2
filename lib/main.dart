@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutterbuoi2/listdemo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
         margin: const EdgeInsets.all(50),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(30)),
           border: Border.symmetric(vertical: BorderSide.none),
         ),
@@ -71,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icon(Icons.home,
                 size: 25,
                 color: Colors.black12),
-                Image.asset('assets\images\images1.png', width: 50,height: 50,),
+                Image.asset('assets/images/images1.png', width: 50,height: 50,),
 
               ],
             ),
@@ -79,18 +80,20 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 child: Text('Click Button'),
-                onPressed: _incrementCounter
-              ,)
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ListDemo()));
+                }
+              ,)// click next creen listdemo
               ),
               IconButton(
                 onPressed: _incrementCounter, 
                 icon: Icon(Icons.exit_to_app),),
-                Container(
+                /*Container(
                   color: Colors.yellowAccent,
                   width: 300,
                   height: 300,
-                  child: Stack
-                  (children: [
+                  child: Stack(
+                    children: [
                     Positioned(
                       left: 40,
                       right: 40,
@@ -108,15 +111,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontWeight: FontWeight.bold
                       )),
                       )
-                  ],),
-                )
+                  ],
+                  ),
+                )*/
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Text('EXIT'),
+        child: Text('ADD'),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
