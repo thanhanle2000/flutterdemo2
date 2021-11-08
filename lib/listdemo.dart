@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbuoi2/dimens.dart';
 
 class ListDemo extends StatefulWidget {
   const ListDemo({Key? key}) : super(key: key);
@@ -20,58 +21,53 @@ class _ListDemoState extends State<ListDemo> {
     'HTML'
   ];
 
-  final listDemo1 = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9'
-  ];
+  final listDemo1 = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('ListView Demo Lesson 6',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          
-          color: Colors.black
-        ),),),
+        title: Center(
+          child: Text(
+            'ListView Demo Lesson 6',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
         backgroundColor: Colors.blue[100],
       ),
       body: Column(
         children: [
           Expanded(
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 50),
-                  color: Colors.amberAccent, child: buildWidgetListView())),
+                  padding: EdgeInsets.symmetric(vertical: 50.w),
+                  color: Colors.amberAccent,
+                  child: buildWidgetListView())),
           Expanded(
               child: Container(
-                padding: EdgeInsets.all(50),
-                  color: Colors.greenAccent, child: buildWidgetGridView())),
+                  padding: EdgeInsets.all(50.w),
+                  color: Colors.greenAccent,
+                  child: buildWidgetGridView())),
         ],
       ),
     );
   }
 
   Widget buildWidgetListView() => ListView.builder(
-    scrollDirection: Axis.vertical,
+      scrollDirection: Axis.vertical,
       itemCount: listDemo.length,
       itemBuilder: (BuildContext context, index) {
-        return Text(listDemo[index],
-        style: TextStyle(
-          fontSize: 25,
-        ),);
+        return Text(
+          listDemo[index],
+          style: TextStyle(
+            fontSize: 25.t,
+          ),
+        );
       });
 
   Widget buildWidgetGridView() => GridView.builder(
       itemCount: listDemo1.length,
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
           mainAxisExtent: 100,
           mainAxisSpacing: 2,
           crossAxisSpacing: 2),

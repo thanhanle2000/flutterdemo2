@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutterbuoi2/dimens.dart';
 import 'package:flutterbuoi2/listdemo.dart';
 
 void main() {
@@ -48,11 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        margin: const EdgeInsets.all(50),
-        padding: const EdgeInsets.all(10),
+        margin:  EdgeInsets.all(50.w),
+        padding:  EdgeInsets.all(10.w),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(30)),
+          borderRadius: BorderRadius.all(Radius.circular(30.w)),
           border: Border.symmetric(vertical: BorderSide.none),
         ),
         child: Column(
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'Lesson 4: count=$_counter',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 20.t,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -72,12 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icon(Icons.home,
                 size: 25,
                 color: Colors.black12),
-                Image.asset('assets/images/images1.png', width: 50,height: 50,),
+                Image.asset('assets/images/images1.png', width: 50.w,height: 50.w,),
 
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(8.0.w),
               child: ElevatedButton(
                 child: Text('Click Button'),
                 onPressed: (){
